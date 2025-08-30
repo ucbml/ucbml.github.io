@@ -1,81 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CS180 Portfolio</title>
   <style>
-    /* Base styles */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: #222;
-      background: #fff;
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      background: white;
+      color: #1a1a1a;
     }
 
     header {
-      background: #004080;
+      background: #243e7c;
       color: white;
-      padding: 20px;
+      padding: 30px 20px 10px;
       text-align: center;
     }
 
     header h1 {
+      font-size: 2.2em;
       margin: 0;
-      font-size: 2.5rem;
     }
 
-    nav {
-      background: #0066cc;
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 1.2rem;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
+    header p {
+      font-size: 1em;
+      margin-top: 10px;
     }
 
     main {
-      padding: 20px;
-      max-width: 900px;
-      margin: 20px auto;
+      flex: 1;
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
 
     section {
-      margin-bottom: 2rem;
+      margin-bottom: 60px;
     }
 
     section h2 {
-      color: #003366;
-      font-size: 1.8rem;
+      font-size: 1.5em;
+      color: #1a1a1a;
     }
 
     section p {
-      font-size: 1.1rem;
       margin: 10px 0;
+      color: #444;
+    }
+
+    a {
+      color: #243e7c;
+      text-decoration: underline;
     }
 
     footer {
       background: #f1f1f1;
+      padding: 15px;
       text-align: center;
-      padding: 10px;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
+      font-size: 0.9rem;
+      color: #555;
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>CS180: Introduction to Computer Vision</h1>
     <p>Melody's Portfolio</p>
@@ -102,8 +96,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Melody Law | CS180 Portfolio</p>
+    &copy; 2025 Melody Law | CS180 Portfolio
   </footer>
-
 </body>
 </html>
