@@ -70,6 +70,17 @@
       max-width: 45%;
       height: auto;
     }
+
+    .image-container {
+      text-align: center;
+      margin-bottom: 20px; /* space below image + caption */
+    }
+    
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+    }
+
     
   </style>
 </head>
@@ -91,13 +102,15 @@
     <section id="part2">
       <h2>Part 2: Architectural Perspective Compression</h2>
       <div class="landscape">
-      <img src="
-    https://raw.githubusercontent.com/ucbml/ucbml.github.io/main/images/IMG_20250831_195243.jpg" alt="zoomed">
-      <img src="https://raw.githubusercontent.com/ucbml/ucbml.github.io/main/images/IMG_20250831_195754.jpg" alt="non-zoomed">
+       <div class="image-container">
+        <img src="https://raw.githubusercontent.com/ucbml/ucbml.github.io/main/images/IMG_20250831_195243.jpg" alt="Perspective 1">
+        <p>Zoomed in.</p>
+      </div>
+      <div class="image-container">
+        <img src="https://raw.githubusercontent.com/ucbml/ucbml.github.io/main/images/IMG_20250831_195754.jpg" alt="Perspective 2">
+        <p>Raw size.</p>
+      </div>
     </div>
-      <p>
-        Description.
-      </p>
     </section>
 
     <section id="part3">
