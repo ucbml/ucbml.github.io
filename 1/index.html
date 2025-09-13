@@ -72,12 +72,13 @@
   <main>
     <section>
       <h2>Introduction</h2>
-      <p>GIVE OVERVIEW.</p>
+      <p>This project uses (red, green, and blue) color filters to reconstruct a color image from the Prokudin-Gorskii collection.</p>
     </section>
 
     <section>
-      <h2>Algorithm</h2>
-      <p>WRITE.</p>
+      <h2>Approach</h2>
+      <p>I mostly followed the instructions to carry out my implementation. In particular, after running the given skeleton code for image splitting, I used a naive search method where I exhaustively scanned smaller (single-scale alignment) images and tested the channel offsets using both Normalized Cross-Correlation (NCC) and Euclidean Distance metrics. For larger TIF images, I built image pyramids.</p>
+      <p>The biggest challenge I encountered when working on this project is getting the channels to line up nicely, especially the emir.tif image. In an attempt to acheive better alignment, I implemented a cropping function and tried using different base channels.</p>
     </section>
 
     <section>
@@ -103,10 +104,25 @@
       </div>
     </section>
 
-    <section>
-      <h2>Bells & Whistles</h2>
-      <p>WRITE.</p>
+     <section>
+      <h2>Results (on images of my choosing)</h2>
+      <div class="image-grid">
+        <div class="result-image">
+          <img src="images/cathedral.jpg" alt="cathedral">
+          <div class="image-caption">cathedral.jpg<br>Green offset: (2, 5)<br>Red offset: (3, 12)</div>
+        </div>
+        <div class="result-image">
+          <img src="images/church.jpg" alt="church">
+          <div class="image-caption">church.tif<br>Green offset: (4, 25)<br>Red offset: (-4, 58)</div>
+        </div>
+        <div class="result-image">
+          <img src="images/harvester.jpg" alt="harvester">
+          <div class="image-caption">harvester.tif<br>Green offset: (17, 60)<br>Red offset: (14, 124)</div>
+        </div>
+        <!-- Add more images -->
+      </div>
     </section>
+
   </main>
 
 </body>
