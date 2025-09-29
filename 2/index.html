@@ -76,7 +76,47 @@
     </section>
 
     <section>
-      <h2>Part 1.1</h2>
+      <h2>Part 1.1 - Convolutions from Scratch</h2>
+      <pre><code>
+        # 4 for-loops
+        def convolve_naive(image, kernel):
+            im_height, im_width = image.shape
+            k_height, k_width = kernel.shape
+        
+            pad_height = k_height // 2
+            pad_width = k_width // 2
+            
+            padded = np.pad(image, ((pad_height, pad_height), (pad_width, pad_width)), mode = 'constant', constant_values = 0)
+        
+            output = np.zeros_like(image)
+        
+            for i in range(im_height):
+                for j in range(im_width):
+                    result = 0
+                    for x in range(k_height):
+                        for y in range(k_width):
+                            result += padded[i + x][j + y] * kernel[x][y]
+                    output[i][j] = result
+            return output
+        
+        # 2 for-loops (vectorized)
+        def convolve_vectorized(image, kernel):
+            im_height, im_width = image.shape
+            k_height, k_width = kernel.shape
+        
+            pad_height = k_height // 2
+            pad_width = k_width // 2
+            
+            padded = np.pad(image, ((pad_height, pad_height), (pad_width, pad_width)), mode = 'constant', constant_values = 0)
+        
+            output = np.zeros_like(image)
+        
+            for i in range(im_height):
+                for j in range(im_width):
+                    region = padded[i:i + k_height, j:j + k_width]
+                    output[i, j] = np.sum(region * kernel)
+            return output
+        </code></pre>
       <p>________________________________</p>
     </section>
     
