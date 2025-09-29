@@ -172,7 +172,7 @@
     
     <section>
       <h2>Part 1.3: Derivative of Gaussian (DoG) Filter</h2>
-      <p>Comparison: convolving with a Gaussian filter instead of applying finite of difference operators directly allowed us to produce much smoother edges, albeit with a higher threshold value (I used 40 here).</p>
+      <p>Comparison: convolving with a Gaussian filter instead of applying finite of difference operators directly allowed us to produce much smoother edges, albeit with a higher threshold value (I used a threshold of 40 here). I used two different approaches: (1) we apply a Gaussian filter on images before taking their derivative and convolving, (2) we convolve Gaussian filters with derivatives then apply on images. Both produced the same, smoother result. A kernel size of 9 was applied on these images.</p>
 
       <div class="image-grid">
         
@@ -191,6 +191,45 @@
           <div class="image-caption">DoG Dy</div>
         </div>
 
+
+        <div class="result-image">
+          <img src="images/gaus_dx.jpg" alt="gaus_dx">
+          <div class="image-caption">Approach 1 Dx on Cameraman</div>
+        </div>
+        
+        <div class="result-image">
+          <img src="images/gaus_dy.jpg" alt="gaus_dy">
+          <div class="image-caption">Approach 1 Dy on Cameraman</div>
+        </div>
+        
+        <div class="result-image">
+          <img src="images/gaus_mag.jpg" alt="gaus_mag">
+          <div class="image-caption">Approach 1 Magnitude on Cameraman</div>
+        </div>
+
+
+        
+        
+        <div class="result-image">
+          <img src="images/camera-imgx.jpg" alt="camera-imgx">
+          <div class="image-caption">Approach 2 Dx on Cameraman</div>
+        </div>
+        
+        <div class="result-image">
+          <img src="images/camera-imgy.jpg" alt="camera-imgy">
+          <div class="image-caption">Approach 2 Dy on Cameraman</div>
+        </div>
+        
+        <div class="result-image">
+          <img src="images/camera_conv_mag.jpg" alt="gaus_mag">
+          <div class="image-caption">Approach 2 Magnitude on Cameraman</div>
+        </div>
+
+        <div class="result-image">
+          <img src="images/cameraman-final.jpg" alt="cameraman-final">
+          <div class="image-caption">Final Edge Image</div>
+        </div>
+        
         
       </div>
     </section>
