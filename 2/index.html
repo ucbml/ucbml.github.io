@@ -118,7 +118,7 @@
             return output
       </code></pre>
 
-      <p>Analysis: overall, convolve2d was much faster than the naive implementations above. Convolving a box filter with an image of my friend's dog took well over a minute with the 4 for-loop implementation (~1 min 15 sec), 10 seconds with the vectorized convolution, and was nearly instantaneous with convolve2d (&lt; 1 sec). By inspection, the results also looked identical as the boundaries and edges were pretty much the same.</p>
+      <p>In this part, we test out different convolution approaches: one using 4 for-loops, one using 2 for-loops (slighly vectorized), and convolve2d from scipy. Overall, convolve2d was much faster than the naive implementations above. Convolving a box filter with an image of my friend's dog took well over a minute with the 4 for-loop implementation (~1 min 15 sec), 10 seconds with the vectorized convolution, and was nearly instantaneous with convolve2d (&lt; 1 sec). By inspection, the results also looked identical as the boundaries and edges were pretty much the same.</p>
 
       <div class="image-grid">
         <div class="result-image">
@@ -142,7 +142,7 @@
 
     <section>
       <h2>Part 1.2: Finite Difference Operator</h2>
-      <p>After trying out different threshold values, I decided to go with a 0.25 threshold as the image was still noisy when using a 0.2 threshold whereas at 0.3, the edges started to disconnect.</p>
+      <p>In this part, we test out the finite difference operators and try to find an optimal threshold value that detects edges in our images while ideally minimizing noise. After trying out different threshold values, I decided to go with a 0.25 threshold as the image was still noisy when using a 0.2 threshold whereas at 0.3, the edges started to disconnect.</p>
 
       <div class="image-grid">
         <div class="result-image">
@@ -172,7 +172,7 @@
     
     <section>
       <h2>Part 1.3: Derivative of Gaussian (DoG) Filter</h2>
-      <p>Comparison: convolving with a Gaussian filter instead of applying finite of difference operators directly allowed us to produce much smoother edges, albeit with a higher threshold value (I used a threshold of 40 here). I used two different approaches: (1) we apply a Gaussian filter on images before taking their derivative and convolving, (2) we convolve Gaussian filters with derivatives then apply on images. Both produced the same, smoother result. A kernel size of 9 was applied on these images.</p>
+      <p>In this part, we try a different approach to edge detection by convolving with a Gaussian filter instead of applying finite of difference operators, allowing us to produce much smoother edges albeit with a higher threshold value (I used a threshold of 40 here). We tried two different approaches: (1) we apply a Gaussian filter on images before taking their derivative and convolving, (2) we convolve Gaussian filters with derivatives then apply on images. Both produced the same, smoother result. A kernel size of 9 was applied on these images.</p>
 
       <div class="image-grid">
         
@@ -236,8 +236,10 @@
 
     <section>
       <h2>Part 2.1: Image "Sharpening"</h2>
-      <p>________________________________</p>
+      <p>Next, we use a masking technique to sharpen an image. This is done by getting the high frequences of the image (subtracting the blurred image from the original), scaling it by some alpha, and adding it back to our original image. I tested the technique and tried different alpha values on images of the Taj Mahal as well as a super blurry image of Oski.</p>
     </section>
+
+    
 
     <section>
       <h2>Part 2.2: Hybrid Images</h2>
