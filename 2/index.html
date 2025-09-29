@@ -246,63 +246,86 @@
     <section>
       <h2>Part 2.1: Image "Sharpening"</h2>
       <p>Next, we use a masking technique to sharpen an image. This is done by getting the high frequences of the image (subtracting the blurred image from the original), scaling it by some alpha, and adding it back to our original image. I tested the technique and tried different alpha values on images of the Taj Mahal as well as a super blurry image of Oski.</p>
-    </section>
 
     <div class="image-grid">
+        <div class="result-image">
+          <img src="images/taj.jpg" alt="taj">
+          <div class="image-caption">Original Taj</div>
+        </div>
+        
+        <div class="result-image">
+          <img src="images/taj-blur.jpg" alt="taj-blur">
+          <div class="image-caption">Blurred Taj (Low Frequency)</div>
+        </div>
+        
+        <div class="result-image">
+          <img src="images/taj-details.jpg" alt="taj-details">
+          <div class="image-caption">Taj Details (High Frequency)</div>
+        </div>
+  
+        <div class="result-image">
+          <img src="images/taj-sharpen.jpg" alt="taj-sharpen">
+          <div class="image-caption">Taj Sharpened (alpha=1.5)</div>
+        </div>
+  
+        <div class="result-image">
+          <img src="images/taj-sharpen-3.jpg" alt="taj-sharpen-3">
+          <div class="image-caption">Taj Sharpened (alpha=3)</div>
+        </div>
+  
+        
+        <div class="result-image">
+          <img src="images/oski.jpg" alt="oski">
+          <div class="image-caption">Original Oski</div>
+        </div>
+        
+        <div class="result-image">
+          <img src="images/oski-blur.jpg" alt="taj-blur">
+          <div class="image-caption">Blurred Oski</div>
+        </div>
+        
+        <div class="result-image">
+          <img src="images/oski-details.jpg" alt="taj-details">
+          <div class="image-caption">Oski Details</div>
+        </div>
+  
+        <div class="result-image">
+          <img src="images/oski-sharpen-3.jpg" alt="oski-sharpen-3">
+          <div class="image-caption">Oski Sharpened (alpha=3)</div>
+        </div>
+  
+        <div class="result-image">
+          <img src="images/oski-sharpen-6.jpg" alt="oski-sharpen-6">
+          <div class="image-caption">Oski Sharpened (alpha=6)</div>
+        </div>
+      
+      <p>I also tried blurring then re-sharpening a sharp image and it looked comparable to the original one.</p>
 
-      <div class="result-image">
-        <img src="images/taj.jpg" alt="taj">
-        <div class="image-caption">Original Taj</div>
+        <div class="result-image">
+          <img src="images/cq.jpg" alt="cq">
+          <div class="image-caption">Original Chongqing</div>
+        </div>
+        
+        <div class="result-image">
+          <img src="images/cq-blur.jpg" alt="cq-blur">
+          <div class="image-caption">Blurred Chongqing</div>
+        </div>
+        
+        <div class="result-image">
+          <img src="images/cq-details.jpg" alt="cq-details">
+          <div class="image-caption">Chongqing Details</div>
+        </div>
+  
+        <div class="result-image">
+          <img src="images/cq-sharpen-3.jpg" alt="cq-sharpen-3">
+          <div class="image-caption">Chongqing Sharpened (alpha=3)</div>
+        </div>
+
       </div>
       
-      <div class="result-image">
-        <img src="images/taj-blur.jpg" alt="taj-blur">
-        <div class="image-caption">Blurred Taj (Low Frequency)</div>
-      </div>
       
-      <div class="result-image">
-        <img src="images/taj-details.jpg" alt="taj-details">
-        <div class="image-caption">Taj Details (High Frequency)</div>
-      </div>
-
-      <div class="result-image">
-        <img src="images/taj-sharpen.jpg" alt="taj-sharpen">
-        <div class="image-caption">Taj Sharpened (alpha=1.5)</div>
-      </div>
-
-      <div class="result-image">
-        <img src="images/taj-sharpen-3.jpg" alt="taj-sharpen-3">
-        <div class="image-caption">Taj Sharpened (alpha=3)</div>
-      </div>
-
-
       
-      <div class="result-image">
-        <img src="images/oski.jpg" alt="oski">
-        <div class="image-caption">Original Oski</div>
-      </div>
-      
-      <div class="result-image">
-        <img src="images/oski-blur.jpg" alt="taj-blur">
-        <div class="image-caption">Blurred Oski</div>
-      </div>
-      
-      <div class="result-image">
-        <img src="images/oski-details.jpg" alt="taj-details">
-        <div class="image-caption">Oski Details</div>
-      </div>
-
-      <div class="result-image">
-        <img src="images/oski-sharpen-3.jpg" alt="oski-sharpen-3">
-        <div class="image-caption">Oski Sharpened (alpha=3)</div>
-      </div>
-
-      <div class="result-image">
-        <img src="images/oski-sharpen-6.jpg" alt="oski-sharpen-6">
-        <div class="image-caption">Oski Sharpened (alpha=6)</div>
-      </div>
-
-    </div>
+    </section>
 
 
     <section>
