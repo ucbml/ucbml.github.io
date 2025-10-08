@@ -85,7 +85,24 @@
 
     <section>
       <h2>Part A.2</h2>
-      <p>_______________________________________________</p>
+      <p>Next, we select correspondence points for our images to _______________________________________________</p>
+
+      <p>Recovered Homography Matrix</p>
+        <pre><code>
+           [ 6.41627275e-01,  1.78404625e-01,  1.07327821e+02],
+           [-3.80550278e-01,  1.06400977e+00,  1.54645094e+02],
+           [-1.89449115e-04,  1.11919643e-04,  1.00000000e+00]
+        </code></pre>
+      
+      <div class="image-grid">
+
+        <div class="result-image">
+          <img src="images/board-corr.jpg" alt="board-corr">
+          <div class="image-caption">Correspondence Points for Menu Board</div>
+        </div>
+        
+        
+      </div>
 
       <div class="image-grid">
         <div class="result-image">
@@ -97,13 +114,32 @@
 
     <section>
       <h2>Part A.3</h2>
-      <p>_______________________________________________</p>
+      <p>After recovering the homorgraphy matrix, we can implement warping functions _______________________________________________</p>
 
       <div class="image-grid">
+
         <div class="result-image">
-          <img src="images/part3-image.jpg" alt="part3-image">
-          <div class="image-caption">Part3 Image</div>
+          <img src="images/board-left-small.jpg" alt="board-left-small">
+          <div class="image-caption">Original Board Image</div>
         </div>
+
+        <div class="result-image">
+          <img src="images/board-bilinear.jpg" alt="board-bilinear">
+          <div class="image-caption">Rectified Board - Bilinear Interpolation</div>
+        </div>
+
+        
+        <div class="result-image">
+          <img src="images/board-left-small.jpg" alt="board-left-small">
+          <div class="image-caption">Original Math Image</div>
+        </div>
+
+        <div class="result-image">
+          <img src="images/board-bilinear.jpg" alt="board-bilinear">
+          <div class="image-caption">Rectified Math - Nearest Neighbors</div>
+        </div>
+        
+        
       </div>
       
     </section>
