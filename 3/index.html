@@ -76,12 +76,12 @@
       
       <div class="image-grid">
         <div class="result-image">
-          <img src="images/dine-left.jpg" style="width:100%; max-width:1600px; height:auto;" alt="dine-left">
+          <img src="images/dine-left.jpg" style="width:60%; max-width:1600px; height:auto;" alt="dine-left">
           <div class="image-caption">Restaurant - Left View</div>
         </div>
         
         <div class="result-image">
-          <img src="images/dine-right.jpg" style="width:100%; max-width:1600px; height:auto;" alt="dine-right">
+          <img src="images/dine-right.jpg" style="width:60%; max-width:1600px; height:auto;" alt="dine-right">
           <div class="image-caption">Restaurant - Right View</div>
         </div>
       </div>
@@ -120,7 +120,7 @@
       <h2>Part A.2</h2>
       <p>Next, we select correspondence points for our images to _______________________________________________</p>
 
-      <p>Recovered Homography Matrix (on menu board photo)</p>
+      <p>Recovered Homography Matrix (on menu board photo):</p>
         <pre><code>
            [ 6.41627275e-01,  1.78404625e-01,  1.07327821e+02],
            [-3.80550278e-01,  1.06400977e+00,  1.54645094e+02],
@@ -148,6 +148,7 @@
       <p>After recovering the homorgraphy matrix, we can implement warping functions to warp our images. We try two different warping approaches here:</p>
       <p>(1) Nearest neighbors: take the value of the nearest pixel</p>
       <p>(2) Bilinear interpolation: take the average value of the nearest pixels</p>
+      <p>As one can see from the rectified image details (may need to zoom in), bilinear interpolation produced smoother edges whereas the nearest neighbors approach produced jagged edges.</p>
 
       <div class="image-grid">
 
