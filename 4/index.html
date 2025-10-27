@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neural Radiance Field (NeRF)</title>
+  <link rel="stylesheet" href="https://eecs189.org/fa25/assets/css/style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #fff;
+    }
+
+    h1 {
+      border-bottom: 2px solid #0066cc;
+      padding-bottom: 0.3em;
+      color: #004080;
+    }
+
+    h2 {
+      margin-top: 2.5em;
+      font-weight: bold;
+      color: #003366;
+    }
+
+    p {
+      margin-top: 0.5em;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 1em;
+      display: block;
+    }
+
+    .result-image {
+      display: inline-block;
+      margin: 15px;
+      text-align: center;
+    }
+
+    .result-image img {
+      width: 250px;
+      height: auto;
+      border: 1px solid #ccc;
+    }
+
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .image-caption {
+      margin-top: 0.5em;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Neural Radiance Field (NeRF)</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Part 0: Camera Calibration</h2>
+      <p>_______________________________________________________</p>
+      
+      <div class="image-grid">
+        <div class="result-image">
+          <img src="images/board-left.jpg" style="width:350px;" alt="board-left">
+          <div class="image-caption">Menu - Left View</div>
+        </div>
+        
+        <div class="result-image">
+          <img src="images/board-right.jpg" style="width:350px;" alt="board-right">
+          <div class="image-caption">Menu - Right View</div>
+        </div>
+      </div>
+      
+    </section>
+
+    
+    <section>
+      <h2>Part 1: Fitting a Neural Field to a 2D Image</h2>
+      <p>_______________________________________________________</p>
+
+      
+      <div class="image-grid">
+
+        <div class="result-image">
+          <img src="images/board-corr.png" style="width:100%; max-width:1600px; height:auto;" alt="board-corr">
+          <div class="image-caption">Correspondence Points for Menu Board</div>
+        </div>
+        
+
+        <div class="result-image">
+          <img src="images/math-corr.png" style="width:100%; max-width:1600px; height:auto;" alt="math-corr">
+          <div class="image-caption">Correspondence Points for Math Board</div>
+        </div>
+        
+      </div>
+    </section>
+
+    
+    <section>
+      <h2>Part 2: Fitting a Neural Radiance Field from Multi-view Images</h2>
+      <p>_______________________________________________________</p>
+
+
+      <div class="image-grid">
+
+        <div class="result-image">
+          <img src="images/board-left-small.jpg" alt="board-left-small">
+          <div class="image-caption">Original Board Image</div>
+        </div>
+
+        <div class="result-image">
+          <img src="images/board-nn.png" alt="board-nn">
+          <div class="image-caption">Rectified Board - Nearest Neighbors</div>
+        </div>
+
+        <div class="result-image">
+          <img src="images/board-bilinear.png" alt="board-bilinear">
+          <div class="image-caption">Rectified Board - Bilinear Interpolation</div>
+        </div>
+
+        <div class="result-image">
+          <img src="images/board-details-nn.jpg" style="width:350px;" alt="board-details-nn">
+          <div class="image-caption">Nearest Neighbors Details</div>
+        </div>
+
+        <div class="result-image">
+          <img src="images/board-details-bilin.jpg" style="width:350px;" alt="board-details-bilin">
+          <div class="image-caption">Bilinear Interpolation Details</div>
+        </div>
+
+      </div>
+
+      <div class="image-grid">
+        
+        <div class="result-image">
+          <img src="images/math.jpg" alt="math">
+          <div class="image-caption">Original Math Image</div>
+        </div>
+
+        <div class="result-image">
+          <img src="images/math-nn.png" alt="math-nn">
+          <div class="image-caption">Rectified Math - Nearest Neighbors</div>
+        </div> 
+
+        <div class="result-image">
+          <img src="images/math-bilinear.png" alt="math-bilinear">
+          <div class="image-caption">Rectified Math - Bilinear Interpolation</div>
+        </div>
+
+        <div class="result-image">
+          <img src="images/math-details-nn.jpg" style="width:350px;" alt="math-details-nn">
+          <div class="image-caption">Nearest Neighbors Details</div>
+        </div>
+
+        <div class="result-image">
+          <img src="images/math-details-bilin.jpg" style="width:350px;" alt="math-details-bilin">
+          <div class="image-caption">Bilinear Interpolation Details</div>
+        </div>
+        
+      </div>
+      
+    </section>
+
+    
+  </main>
+</body>
+</html>
