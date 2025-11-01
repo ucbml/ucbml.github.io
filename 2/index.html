@@ -116,9 +116,11 @@
 
       <p>In this part, we test out different convolution approaches: one using 4 for-loops, one using 2 for-loops (slightly vectorized), and convolve2d from scipy. Overall, convolve2d was much faster than the naive implementations above. Convolving a box filter with an image of my friend's dog took well over a minute with the 4 for-loop implementation (~1 min 15 sec), 10 seconds with the vectorized convolution, and was nearly instantaneous with convolve2d (&lt; 1 sec). By inspection, the results also looked identical as the boundaries and edges were pretty much the same.</p>
 
-      <div class="result-image">
-        <img src="images/Ozzie.jpg" alt="Ozzie">
-        <div class="image-caption">Original Ozzie</div>
+      <div class="image-grid">
+        <div class="result-image">
+          <img src="images/Ozzie.jpg" alt="Ozzie">
+          <div class="image-caption">Original Ozzie</div>
+        </div>
       </div>
 
       
@@ -305,12 +307,14 @@
       <p>I also tried blurring then re-sharpening a sharp image and it looked comparable to the original one, although the colors were slightly less vibrant in the sharpened version.</p>
 
       <div class="image-grid">
-
         <div class="result-image">
           <img src="images/cq.jpg" alt="cq">
           <div class="image-caption">Original Bridge</div>
         </div>
-        
+      </div>
+
+      
+      <div class="image-grid">
         <div class="result-image">
           <img src="images/cq-blur.jpg" alt="cq-blur">
           <div class="image-caption">Blurred Bridge</div>
@@ -320,12 +324,13 @@
           <img src="images/cq-details.jpg" alt="cq-details">
           <div class="image-caption">Bridge Details</div>
         </div>
-  
+      </div>
+
+      <div class="image-grid">
         <div class="result-image">
           <img src="images/cq-sharpen-3.jpg" alt="cq-sharpen-3">
           <div class="image-caption">Bridge Sharpened (alpha=3)</div>
         </div>
-        
       </div>
       
       
@@ -338,16 +343,14 @@
       <p>Then in this next part, we combine the low frequencies of one image with the high frequencies of another image to get a hybrid image effect. Aside from testing it out on Derek and Nutmeg, I tried to create a hybrid between an Eiffel-looking tower and the Campanile. For the tower hybrid, I used a low-pass cutoff of 15 and high pass cutoff of 25.</p>
       
       <div class="image-grid">
-        
         <div class="result-image">
-          <img src="images/derek-hybrid.jpeg" alt="derek-hybrid">
+          <img src="images/derek-hybrid.jpeg" style="width:100%; max-width:1600px; height:auto;" alt="derek-hybrid">
           <div class="image-caption">Derek Nutmeg Hybrid</div>
         </div>
-        
       </div>
+
       
       <div class="image-grid">
-        
         <div class="result-image">
           <img src="images/tower.jpg" alt="tower">
           <div class="image-caption">Original Tower</div>
@@ -357,18 +360,21 @@
           <img src="images/campanile.jpg" alt="campanile">
           <div class="image-caption">Original Campanile</div>
         </div>
+      </div>
+
       
-        <div class="result-image">
-          <img src="images/tower-hybrid.jpg" alt="tower-hybrid">
+      <div class="image-grid">
+       <div class="result-image">
+          <img src="images/tower-hybrid.jpg" style="width:100%; max-width:1600px; height:auto;" alt="tower-hybrid">
           <div class="image-caption">Tower Campanile Hybrid</div>
-        </div>
+       </div>
       
         <div class="result-image">
-          <img src="images/fourier.jpeg" alt="fourier">
+          <img src="images/fourier.jpeg" style="width:100%; max-width:1600px; height:auto;" alt="fourier">
           <div class="image-caption">FFTs of Tower Hybrid</div>
         </div>
-        
       </div>
+       
 
     </section>
 
@@ -378,22 +384,22 @@
       
       <div class="image-grid">
         <div class="result-image">
-          <img src="images/apple-gaus.jpg" alt="apple-gaus">
+          <img src="images/apple-gaus.jpg" style="width:100%; max-width:1600px; height:auto;" alt="apple-gaus">
           <div class="image-caption">Apple Gaussian Stack</div>
         </div>
         
         <div class="result-image">
-          <img src="images/orange-gaus.jpg" alt="orange-gaus">
+          <img src="images/orange-gaus.jpg" style="width:100%; max-width:1600px; height:auto;" alt="orange-gaus">
           <div class="image-caption">Orange Gaussian Stack</div>
         </div>
       
         <div class="result-image">
-          <img src="images/apple-lap.jpg" alt="apple-lap">
+          <img src="images/apple-lap.jpg" style="width:100%; max-width:1600px; height:auto;" alt="apple-lap">
           <div class="image-caption">Apple Laplacian Stack</div>
         </div>
       
         <div class="result-image">
-          <img src="images/orange-lap.jpg" alt="orange-lap">
+          <img src="images/orange-lap.jpg" style="width:100%; max-width:1600px; height:auto;" alt="orange-lap">
           <div class="image-caption">Orange Laplacian Stack</div>
         </div>
       </div>
@@ -406,17 +412,17 @@
       <p>I fell ill and wasn't able to recreate the 3.42 figure specifically, but I managed to visualize the oraple result as well as some other fun blends.</p>
       <div class="image-grid">
         <div class="result-image">
-          <img src="images/oraple.png" alt="oraple">
+          <img src="images/oraple.png" style="width:100%; max-width:1600px; height:auto;" alt="oraple">
           <div class="image-caption">Oraple Result</div>
         </div>
         
         <div class="result-image">
-          <img src="images/sun_night_blend.png" alt="sun_night_blend">
+          <img src="images/sun_night_blend.png" style="width:100%; max-width:1600px; height:auto;" alt="sun_night_blend">
           <div class="image-caption">Sun Night Blend</div>
         </div>
 
         <div class="result-image">
-          <img src="images/food_blend.png" alt="food_blend">
+          <img src="images/food_blend.png" style="width:100%; max-width:1600px; height:auto;" alt="food_blend">
           <div class="image-caption">Food Blend</div>
         </div>
         
