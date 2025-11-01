@@ -77,7 +77,7 @@
 
     <section>
       <h2>Approach</h2>
-      <p>I mostly followed the instructions to carry out my implementation. In particular, after running the given skeleton code for image splitting, I used a naive search method where I exhaustively scanned smaller (single-scale alignment) images and tested the channel offsets using both Normalized Cross-Correlation (NCC) and Euclidean Distance metrics. For larger TIF images, I built image pyramids.</p>
+      <p>To carry out my implementation, I first ran the given skeleton code for image splitting. Then, I used a naive search method where I exhaustively scanned smaller (single-scale alignment) images and tested the channel offsets using both Normalized Cross-Correlation (NCC) and Euclidean Distance metrics. For larger TIF images, I built image pyramids by blurring and downsampling the images.</p>
       <p>The biggest challenge I encountered when working on this project is getting the channels to line up nicely, especially the emir.tif image. In an attempt to acheive better alignment, I implemented a cropping function and tried using different base channels.</p>
     </section>
 
