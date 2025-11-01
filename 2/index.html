@@ -116,13 +116,13 @@
 
       <p>In this part, we test out different convolution approaches: one using 4 for-loops, one using 2 for-loops (slightly vectorized), and convolve2d from scipy. Overall, convolve2d was much faster than the naive implementations above. Convolving a box filter with an image of my friend's dog took well over a minute with the 4 for-loop implementation (~1 min 15 sec), 10 seconds with the vectorized convolution, and was nearly instantaneous with convolve2d (&lt; 1 sec). By inspection, the results also looked identical as the boundaries and edges were pretty much the same.</p>
 
+      <div class="result-image">
+        <img src="images/Ozzie.jpg" alt="Ozzie">
+        <div class="image-caption">Original Ozzie</div>
+      </div>
+
+      
       <div class="image-grid">
-        
-        <div class="result-image">
-          <img src="images/Ozzie.jpg" alt="Ozzie">
-          <div class="image-caption">Original Ozzie</div>
-        </div>
-        
         <div class="result-image">
           <img src="images/Ozzie_boxed.png" alt="Ozzie_boxed">
           <div class="image-caption">Boxed Ozzie</div>
