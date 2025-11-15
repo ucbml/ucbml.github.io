@@ -72,7 +72,7 @@
   <main>
     <section>
       <h2>Parts 0.1 & 0.2: Camera Calibration & Capturing a 3D Scan</h2>
-      <p>Before building the NeRF, I first printed out a sheet of Aruco tags and took ~30 images of it from varying angles and distances while ensuring that the zoom is preserved. This allowed me to calibrate my camera with the help of cv2.calibrateCamera() and gather instrinsic parameters which are later used to estimate our camera pose. Afterwards, I captured a 3D scan of my pencil case by placing it next to a single printed acruo tag and again taking ~30 images from varying angles and distances.</p>
+      <p>Before building the NeRF, we first print out a sheet of Aruco tags and take ~30 images of it from varying angles and distances while ensuring that the zoom is preserved. This allows us to calibrate our cameras with the help of cv2.calibrateCamera() and gather instrinsic parameters which are later used to estimate our camera pose. Afterwards, we captured a 3D scan of an object by placing it next to a single printed acruo tag and again taking ~30 images from varying angles and distances. I chose my pencil case as my choice of object.</p>
       
       <div class="image-grid">
         <div class="result-image">
@@ -84,47 +84,57 @@
           <img src="images/board-right.jpg" style="width:350px;" alt="board-right">
           <div class="image-caption">Menu - Right View</div>
         </div>
-      </div>
-      
+      </div>  
     </section>
 
+    
     <section>
       <h2>Part 0.3: Estimating Camera Pose</h2>
-      <p>Using the camera calibration parameters from part 0.1, I estimated my camera pose by leveraging the rotation matrix and translation vector of my camera's extrinsic matrix along with cv2.solvePnP (and of course, linear algebra). I then passed these into a visualization code to observe the poses in a 3D space.</p>
+      <p>Using the camera calibration parameters from part 0.1, we estimate our camera pose by leveraging the rotation matrix and translation vector of our camera's extrinsic matrix along with cv2.solvePnP (and of course, linear algebra). We then pass these into a visualization code to observe the poses in a 3D space. Here are the 3D visualizations of my pencil case scan:</p>
       
       <div class="image-grid">
         <div class="result-image">
-          <img src="images/viser-1.png" style="width:350px;" alt="viser-1">
+          <img src="images/viser-1.png" style="width:450px;" alt="viser-1">
           <div class="image-caption">3D view 1</div>
         </div>
         
         <div class="result-image">
-          <img src="images/viser-2.png" style="width:350px;" alt="viser-2">
+          <img src="images/viser-2.png" style="width:450px;" alt="viser-2">
           <div class="image-caption">3D view 2</div>
         </div>
       </div>
+    </section>
+
+    
+    <section>
+      <h2>Part 0.4: Undistorting Images & Creating a Dataset</h2>
+      <p>To wrap up part 0, we remove lens distortions from our images and organize everything into a dataset so that we can use it for NeRF training later on. We also split the data into training, validation, and test sets.</p>
       
     </section>
 
     
     <section>
       <h2>Part 1: Fitting a Neural Field to a 2D Image</h2>
-      <p>_______________________________________________________</p>
+      <p>To prepare us for 3D NeRF work, we first focus on 2D Neural Fields. Namely, we build a neural network that given an image, attempts to reconstruct it by using pixel coordinates as inputs and outputting some rgb color value.</p>
 
       
       <div class="image-grid">
 
         <div class="result-image">
-          <img src="images/board-corr.png" style="width:100%; max-width:1600px; height:auto;" alt="board-corr">
-          <div class="image-caption">Correspondence Points for Menu Board</div>
+          <img src="images/fox.jpg" alt="fox">
+          <div class="image-caption">Reference Fox Image</div>
         </div>
         
 
         <div class="result-image">
-          <img src="images/math-corr.png" style="width:100%; max-width:1600px; height:auto;" alt="math-corr">
-          <div class="image-caption">Correspondence Points for Math Board</div>
+          <img src="images/fox_grid.jpg" alt="fox_grid">
+          <div class="image-caption">Training Progression on Fox Image</div>
         </div>
-        
+
+        <div class="result-image">
+          <img src="images/psnr_curve.png" alt="psnr">
+          <div class="image-caption">PSNR Curve of Fox Image</div>
+        </div>
       </div>
     </section>
 
