@@ -71,8 +71,8 @@
 
   <main>
     <section>
-      <h2>Part 0: Camera Calibration & Capturing a 3D Scan</h2>
-      <p>_______________________________________________________</p>
+      <h2>Parts 0.1 & 0.2: Camera Calibration & Capturing a 3D Scan</h2>
+      <p>Before building the NeRF, I first printed out a sheet of Aruco tags and took ~30 images of it from varying angles and distances while ensuring that the zoom is preserved. This allowed me to calibrate my camera with the help of cv2.calibrateCamera() and gather instrinsic parameters which are later used to estimate our camera pose. Afterwards, I captured a 3D scan of my pencil case by placing it next to a single printed acruo tag and again taking ~30 images from varying angles and distances.</p>
       
       <div class="image-grid">
         <div class="result-image">
@@ -83,6 +83,24 @@
         <div class="result-image">
           <img src="images/board-right.jpg" style="width:350px;" alt="board-right">
           <div class="image-caption">Menu - Right View</div>
+        </div>
+      </div>
+      
+    </section>
+
+    <section>
+      <h2>Part 0.3: Estimating Camera Pose</h2>
+      <p>Using the camera calibration parameters from part 0.1, I estimated my camera pose by leveraging the rotation matrix and translation vector of my camera's extrinsic matrix along with cv2.solvePnP (and of course, linear algebra). I then passed these into a visualization code to observe the poses in a 3D space.</p>
+      
+      <div class="image-grid">
+        <div class="result-image">
+          <img src="images/viser-1.png" style="width:350px;" alt="viser-1">
+          <div class="image-caption">3D view 1</div>
+        </div>
+        
+        <div class="result-image">
+          <img src="images/viser-2.png" style="width:350px;" alt="viser-2">
+          <div class="image-caption">3D view 2</div>
         </div>
       </div>
       
