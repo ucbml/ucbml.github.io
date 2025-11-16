@@ -217,6 +217,10 @@
       <p>In this part we finally build the NeRF structure! It uses a comparable structure to the one in part 1, but with a few key additions. First, the input now takes in 3D world coordinates and outputs the density along with the color. Additionally, the MLP structure is deeper (still Linear and ReLU layers) and includes skip connections as well as branching: one for density, one for rgb / color. The concatenation (skip connection) occurs in two places, one for the density branch, and one for the color branch.</p>
 
       <h2>Part 2.5: Volume Rendering</h2>
+      <p>We then build a volume rendering function that converts densities into alpha (absorption) values and combines it with transmittance to predict colors.</p>
+      
+
+       <h2>Part 2.6: Training with Own Data</h2>
       <p>____________________________.</p>
 
       
