@@ -192,13 +192,13 @@
       <p>In a nutshell, (3) uses (1) and (2) to tranform from pixel to camera, and camera to world to locate ray origin and direction.</p>
       
       <h2>Part 2.2: Sampling</h2>
-      <p>Afterwards, we develop a few sampling functions to collect samples along rays.</p>
+      <p>Then, we develop a few sampling functions to collect samples along rays.</p>
       <p>1. Sampling Rays from Images</p>
       <p>2. Sampling Points along Rays</p>
       <p>(1) randomly samples rays from a batch of images. For each image, it computes the ray origins and directions (with (3) from 2.1) by leveraging a meshgrid of randomly chosen pixel coordinates. The corresponding RGB values are gathered from the image at those pixel locations and combined along with rays to train our model later on. (2) uses near and far bounds (of 2 and 6) to create evenly spaced depths. It also allows for random perturbation of sample points to allow for better variation in our sample.</p>
             
       <h2>Part 2.3: Dataloading</h2>
-      <p>_________________________________.</p>
+      <p>Afterwards, we create a dataloader just like we did in part 1 for the 2D MLP which helps us compute ray origin, ray direction and pixel colors using the previous subparts.</p>
 
       
     </section>
