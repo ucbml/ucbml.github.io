@@ -224,7 +224,8 @@
 
       <h2>Part 2.5: Volume Rendering</h2>
       <p>We then build a volume rendering function that converts densities into alpha (absorption) values and combines it with transmittance to predict colors. After doing so, we have all the necessary components to train our NeRF model. Here we visualize the training process on the provided lego dataset.</p>
-      
+
+      <div class="image-grid">
         <div class="result-image">
           <img src="images/lego_train.jpg" style="width:100%; max-width:1600px; height:auto;" alt="lego_train">
           <div class="image-caption">Lego Training Progression</div>
@@ -239,11 +240,14 @@
           <img src="images/lego.gif" style="width:400px;" alt="lego">
           <div class="image-caption">Final Lego Reconstruction</div>
         </div>
+        
+      </div>
 
       
        <h2>Part 2.6: Training with Own Data</h2>
       <p>Finally we combine the previous parts and train a NeRF on our data from part 0 (my pencil pouch!).</p>
 
+      <div class="image-grid">
         <div class="result-image">
           <img src="images/pouch-train.jpg" style="width:100%; max-width:1600px; height:auto;" alt="pouch-train">
           <div class="image-caption">Pencil Pouch Training Progression</div>
@@ -258,6 +262,8 @@
           <img src="images/pouch.gif" style="width:400px;" alt="pouch">
           <div class="image-caption">Final Pouch Reconstruction</div>
         </div>
+        
+      </div>
 
       <p>And we're done (with arguably one of the hardest projects I've ever worked on)!</p>
 
