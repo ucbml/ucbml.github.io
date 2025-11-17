@@ -72,7 +72,7 @@
   <main>
     <section>
       <h2>Parts 0.1 & 0.2: Camera Calibration & Capturing a 3D Scan</h2>
-      <p>Before building the NeRF, we first print out a sheet of Aruco tags and take ~30 images of it from varying angles and distances while ensuring that the zoom is preserved. This allows us to calibrate our cameras with the help of cv2.calibrateCamera() and gather instrinsic parameters which are later used to estimate our camera pose. Afterwards, we captured a 3D scan of an object by placing it next to a single printed acruo tag and again taking ~30 images from varying angles and distances. I chose my pencil case as my choice of object.</p>
+      <p>Before building the NeRF, we first print out a sheet of Aruco tags and take ~30 images of it from varying angles and distances while ensuring that the zoom is preserved. This allows us to calibrate our cameras with the help of cv2.calibrateCamera() and gather instrinsic parameters which are later used to estimate our camera pose. Afterwards, we captured a 3D scan of an object by placing it next to a single printed acruo tag and again taking ~30 images from varying angles and distances. I chose a pencil pouch as my choice of object.</p>
       
       <div class="image-grid">
         <div class="result-image">
@@ -90,7 +90,7 @@
     
     <section>
       <h2>Part 0.3: Estimating Camera Pose</h2>
-      <p>Using the camera calibration parameters from part 0.1, we estimate our camera pose by leveraging the rotation matrix and translation vector of our camera's extrinsic matrix along with cv2.solvePnP (and of course, linear algebra). We then pass these into a visualization code to observe the poses in a 3D space. Here are the 3D visualizations of my pencil case scan:</p>
+      <p>Using the camera calibration parameters from part 0.1, we estimate our camera pose by leveraging the rotation matrix and translation vector of our camera's extrinsic matrix along with cv2.solvePnP (and of course, linear algebra). We then pass these into a visualization tool, viser, to observe the poses in 3D space. Here are the 3D visualizations of my pencil pouch scan:</p>
       
       <div class="image-grid">
         <div class="result-image">
@@ -115,7 +115,7 @@
     
     <section>
       <h2>Part 1: Fitting a Neural Field to a 2D Image</h2>
-      <p>To prepare us for 3D NeRF work, we first focus on 2D Neural Fields. Namely, we build a neural network that given an image, attempts to reconstruct it by using pixel coordinates as inputs and outputting some rgb color value. The architecture of my model closely followed the one that is provided in the project specifications (4 Linear layers with ReLU in between, width of 256, learning rate of 1e-2, Adam optimization, MSE loss).</p>
+      <p>To prepare us for 3D NeRF work, we first focus on 2D Neural Fields. Namely, we build a multilayer perceptron (MLP) that when given an image, attempts to reconstruct it by using pixel coordinates as inputs and outputting some rgb color value. The architecture of my model closely followed the one that is provided in the project specifications (4 Linear layers with ReLUs in between, width of 256, learning rate of 1e-2, Adam optimization, MSE loss).</p>
 
       
       <div class="image-grid">
@@ -198,7 +198,7 @@
       <p>(1) randomly samples rays from a batch of images. For each image, it computes the ray origins and directions (with (3) from 2.1) by leveraging a meshgrid of randomly chosen pixel coordinates. The corresponding RGB values are gathered from the image at those pixel locations and combined along with rays to train our model later on. (2) uses near and far bounds (of 2 and 6) to create evenly spaced depths. It also allows for random perturbation of sample points to allow for better variation in our sample.</p>
             
       <h2>Part 2.3: Dataloading</h2>
-      <p>Afterwards, we create a dataloader just like we did in part 1 for the 2D MLP which enables us to compute ray origin, ray direction and pixel colors using the previous subparts. Here are a few visualizations of the samples with the help of viser:</p>
+      <p>Afterwards, we create a 3D dataloader just like we did in part 1 for the 2D MLP which enables us to compute ray origin, ray direction and pixel colors using the previous subparts. Here are a few visualizations of the samples with the help of viser:</p>
 
       
       <div class="image-grid">
@@ -222,6 +222,9 @@
 
        <h2>Part 2.6: Training with Own Data</h2>
       <p>Finally we combine the previous parts and train a NeRF on our data from part 0 (my pencil case!).</p>
+      
+
+      <p>And we're done (with arguably one of the hardest projects I've ever worked on)!</p>
 
       
     </section>
