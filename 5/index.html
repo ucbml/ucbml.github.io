@@ -73,17 +73,17 @@
     
     <section>
       <h2>Part A.0: Setup & Text Prompts</h2>
-      <p>I ran the model using a random seed value of 180 and tried out two different num_inference_steps values, 20 and 200. In both cases, the quality of the outputs were decent but not impressive. Meaning, it was pretty obvious that they were AI-generated as they didn't look very realistic (especially since the colors and were exaggerated), and they didn't match what I had in mind, but they weren't terrible either.</p>
+      <p>I ran the model using a random seed value of 180 and tried out several different num_inference_steps values, including 20, 200, and 400. In all cases, the quality of the outputs were decent but not impressive. Meaning, it was pretty obvious that they were AI-generated as they didn't look very realistic (especially since the colors and were exaggerated), and they didn't match what I had in mind but they weren't terrible either. For the black dress prompt, the lady didn't seem young and in the Italy prompt, there was no way to tell that the scene was a depiction of Italy. But overall, I feel that 200 gave the best outputs as the colors tended to be neon at 20 (which made it look unrealistic) whereas at 400 there were visible small circles in the photos.</p>
       
       <div class="image-grid">
         <div class="result-image">
-          <img src="images/board-left.jpg" style="width:350px;" alt="board-left">
-          <div class="image-caption">Menu - Left View</div>
+          <img src="images/part0-20.png" style="width:350px;" alt="part0-20">
+          <div class="image-caption">Results for num_inference_steps = 20</div>
         </div>
         
         <div class="result-image">
-          <img src="images/board-right.jpg" style="width:350px;" alt="board-right">
-          <div class="image-caption">Menu - Right View</div>
+          <img src="images/part0-200.png" style="width:350px;" alt="part0-200">
+          <div class="image-caption">Results for num_inference_steps = 200</div>
         </div>
       </div>
       
