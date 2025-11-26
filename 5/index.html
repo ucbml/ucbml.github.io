@@ -73,7 +73,7 @@
     
     <section>
       <h2>Part A.0: Setup & Text Prompts</h2>
-      <p>I ran the model using a random seed value of 180 and tried out several different num_inference_steps values, including 20, 200, and 400. In all cases, the quality of the outputs were decent but not impressive. Meaning, it was pretty obvious that they were AI-generated as they didn't look very realistic (especially since the colors were exaggerated), and they didn't match what I had in mind but they weren't terrible either. For the black dress prompt, the lady didn't seem young and in the Italy prompt, there was no way to tell that the scene was a depiction of Italy. But overall, I feel that 200 gave the best outputs as the colors tended to be neon at 20 (which made it look unrealistic) whereas at 400 there were visible small circles in the photos.</p>
+      <p>I ran the model using a random seed value of 180 and tried out several different num_inference_steps values, including 20, 200, and 400. In all cases, the quality of the outputs were decent but not impressive. Meaning, it was pretty obvious that they were AI-generated as they didn't look very realistic (especially since the colors were exaggerated), and they didn't match what I had in mind but they weren't terrible either. For the black dress prompt, the lady didn't seem *that* young and in the Italy prompt, there was no way to tell that the scene was a depiction of Italy in particular. But overall, I feel that 200 gave the best outputs as the colors were usually neon at 20 (which made it look unrealistic) whereas at 400 there were visible small circles in the photos.</p>
       
       <div class="image-grid">
         <div class="result-image">
@@ -138,13 +138,13 @@
 
       <div class="image-grid">
         <div class="result-image">
-          <img src="images/board-left.jpg" style="width:350px;" alt="board-left">
-          <div class="image-caption">Menu - Left View</div>
+          <img src="images/campanile.jpg" style="width:350px;" alt="original-campanile">
+          <div class="image-caption">Original Campanile Photo</div>
         </div>
         
         <div class="result-image">
-          <img src="images/board-right.jpg" style="width:350px;" alt="board-right">
-          <div class="image-caption">Menu - Right View</div>
+          <img src="images/campanile-onestep.jpg" style="width:350px;" alt="campanile-onestep">
+          <div class="image-caption">Campanile with one-step denoising</div>
         </div>
         
       </div>
