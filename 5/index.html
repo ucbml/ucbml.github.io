@@ -366,7 +366,24 @@
     <section>
       <h2>B.1.1: Implementing the UNet</h2>
       <!-- NO DELIVERABLES HERE -->
-      <p>In part B we ______________________________.</p>
+      <p>In part B we turn to neural networks (specifically the UNet) and flow matching to try out alternative denoising and image sampling techniques. In this first part, we build a one-step denoiser with the following network architecture and specifications:
+        <ul>
+          <li>Conv2d(kernel_size, stride, padding) is nn.Conv2d()</li>
+          <li>BN is nn.BatchNorm2d()</li>
+          <li>GELU is nn.GELU()</li>
+          <li>ConvTranspose2d(kernel_size, stride, padding) is nn.ConvTranspose2d()</li>
+          <li>AvgPool(kernel_size) is nn.AvgPool2d()</li>
+          <li>D is the number of hidden channels and is a hyperparameter that we will set ourselves.</li>
+            
+          At a high level, the blocks do the following:
+          <li>(1) Conv is a convolutional layer that doesn't change the image resolution, only the channel dimension.</li>
+          <li>(2) DownConv is a convolutional layer that downsamples the tensor by 2.</li>
+          <li>(3) UpConv is a convolutional layer that upsamples the tensor by 2.</li>
+          <li>(4) Flatten is an average pooling layer that flattens a 7x7 tensor into a 1x1 tensor. 7 is the resulting height and width after the downsampling operations.</li>
+          <li>(5) Unflatten is a convolutional layer that unflattens/upsamples a 1x1 tensor into a 7x7 tensor.</li>
+          <li>(6) Concat is a channel-wise concatenation between tensors with the same 2D shape. This is simply torch.cat()</li>
+        </ul>
+      </p>
       
       <div class="image-grid">
         <div class="result-image">
