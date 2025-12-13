@@ -501,7 +501,7 @@
 
     <section>
       <h2>B.2.3: Sampling from the UNet</h2>
-      <p>___________________________________.</p>
+      <p>As soon as training is done, we can visualize our model's outputs by sampling a few results:</p>
       
       <div class="image-grid">
         <div class="result-image">
@@ -517,7 +517,7 @@
     
     <section>
       <h2>B.2.4: Adding Class-Conditioning to UNet</h2>
-      <p>___________________________________.</p>
+      <p>As we can see in 2.3, the results were not great. To address this, we add class conditioning to our UNet, which is as simple as adding 2 more FCBlocks to our existing architecture along with a dropout rate of 10%.</p>
         
       
     </section>
@@ -525,7 +525,7 @@
     
     <section>
       <h2>B.2.5: Training the UNet</h2>
-      <p>___________________________________.</p>
+      <p>Training is fairly similar to time conditioned UNets, except we condition on our vector of digit classes and incorporate our dropout logic so that we perform unconditional generation from time to time.</p>
       
       <div class="image-grid">
         <div class="result-image">
@@ -540,7 +540,7 @@
     
     <section>
       <h2>B.2.6: Sampling from the UNet</h2>
-      <p>___________________________________.</p>
+      <p>Simiar to before, we can sample the results after training. Here we use a gamma value of 5.0. In an attempt to avoid the need of a scheduler, we also repeat the training process on a loop that removes the exponential scheduler while decreasing the learning rate to 2e-2 and increasing the epoch count to 15. The results are comparable to our previous loop that uses a scheduler.</p>
       
       <div class="image-grid">
         <div class="result-image">
