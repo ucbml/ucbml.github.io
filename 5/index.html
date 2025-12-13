@@ -205,7 +205,7 @@
     
     <section>
       <h2>A.1.7: Image-to-image Translation</h2>
-      <p>______________________________________</p>
+      <p>Now that we have CFGs, we can get a little more creative! Here, we generate an image that is similar to the campanile by applying a series of edits to a random nose-generated image. We then take the original campanile image, add a little bit of noise using forward, and run iterative_denoise_cfg from 1.6. This produces a series of edits to our random image, each step getting closer and closer to original campanile. We also try the process on some other images, producing really cool results!</p>
       
       <div class="image-grid">
         <div class="result-image">
@@ -236,6 +236,7 @@
       </div>
 
       <h4>1.7.1: Editing Hand-Drawn and Web Images</h4>
+      <p>We can also apply the process on illustrations! Here are the edits made on web and hand drawn images.</p>
 
       <div class="image-grid">
         <div class="result-image">
@@ -272,6 +273,8 @@
       
       
       <h4>1.7.2: Inpainting</h4>
+      <p>Another cool application of this is image inpainting. Here are the results on a few images (campanile, rose, grad photo scene from Berkeley's cherry blossom trees).</p>
+
 
       <div class="image-grid">
         <div class="result-image">
@@ -349,9 +352,10 @@
       </div>
       
     </section>
-    
-    
 
+    
+    
+    <!-- ---------------------------------------------------------------------------------------------------------------------------------------------- -->
     <hr class="gradient">
 
 
