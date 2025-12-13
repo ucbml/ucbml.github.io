@@ -366,7 +366,7 @@
     <section>
       <h2>B.1.1: Implementing the UNet</h2>
       <!-- NO DELIVERABLES HERE -->
-      <p>In part B we turn to neural networks (specifically the UNet) and flow matching to try out alternative denoising and image sampling techniques. In this first part, we build a one-step denoiser with the following network architecture and specifications:
+      <p>In part B we try out alternative denoising and image sampling techniques by turning to UNets and flow matching. In this first part, we build a one-step denoiser with the following network architecture and specifications:
         <ul>
           <li>Conv2d(kernel_size, stride, padding) is nn.Conv2d()</li>
           <li>BN is nn.BatchNorm2d()</li>
@@ -374,8 +374,12 @@
           <li>ConvTranspose2d(kernel_size, stride, padding) is nn.ConvTranspose2d()</li>
           <li>AvgPool(kernel_size) is nn.AvgPool2d()</li>
           <li>D is the number of hidden channels and is a hyperparameter that we will set ourselves.</li>
-            
-          At a high level, the blocks do the following:
+        </ul>
+      </p>
+
+      
+      <p>At a high level, the blocks do the following:
+        <ul>
           <li>(1) Conv is a convolutional layer that doesn't change the image resolution, only the channel dimension.</li>
           <li>(2) DownConv is a convolutional layer that downsamples the tensor by 2.</li>
           <li>(3) UpConv is a convolutional layer that upsamples the tensor by 2.</li>
@@ -403,7 +407,7 @@
     
     <section>
       <h2>B.1.2: Using the UNet to Train a Denoiser</h2>
-      <p>________________________________.</p>
+      <p>After building our network, we can formulate a denoising objective: given some noisy image z, we'd like to train a denoiser D that can map z to a clean image x. Similar to part A, we start by adding noise to our clean images (MNIST digits) by generating training data pairs (z, x) with z = x + σe where e follows the Normal distribution from 0 to our image I. Here are the results across various σ values and digits:</p>
 
       <div class="image-grid">
         <div class="result-image">
@@ -414,6 +418,7 @@
       
 
       <h4>1.2.1: Training</h4>
+      <p>Afterwards, we can train a denoiser D. Here we train with σ=0.5, a batch size of 256, 5 epochs, UNet with hidden dimension of 128, and Adam optimizer with 1e-4 learning rate.</p>
       <div class="image-grid">
         <div class="result-image">
           <img src="images/1.2.1-epoch.jpg" style="height:300px; width:auto;" alt="1.2.1-epoch">
@@ -429,15 +434,17 @@
 
       
       <h4>1.2.2: Out-of-Distribution Testing</h4>
+      <p>Aside from visualizing the results on our trained sigma value of 0.5, we can also examine the results on other sigma values that it wasn't trained on. As we can observe, it seems to perform worse on larger sigma values.</p>
       <div class="image-grid">
         <div class="result-image">
           <img src="images/1.2.2.jpg" style="width:550px;" alt="1.2.2">
         </div>
-
+ 
       </div>
 
       
       <h4>1.2.3: Denoising Pure Noise</h4>
+      <p>We can also denoise pure noise by passing in a "blank canvas" of z = e. This is essentially the same process as 1.2.1 but instead of passing in digit images we use pure noise. As we can observe, the outputs look somewhat ghost-like and pretty much the same across all of our noise inputs. Intuitively, this is because we are computing the "average" of output digits 0-9 as there is no digit it is conditioned on.</p>
       <div class="image-grid">
         <div class="result-image">
           <img src="images/1.2.3-epoch.jpg" style="height:270px; width:auto;" alt="1.2.3-epoch">
@@ -459,7 +466,7 @@
     
     <section>
       <h2>B.2.1: Adding Time Conditioning to UNet</h2>
-      <p>__________________________________.</p>
+      <p>As we just saw in 1.2.3, denoising does not work well with pure noise (generative tasks). To address this, we can leverage flow matching which will denoise our digits iteratively. This difference with this is that we train a UNet model that essentially predicts the 'flow' from our noisy data to clean data. Intermediate noise samples are constructed using linear interpolation. To introduce conditioning, we use time (denoted as t below).</p>
       
       <div class="image-grid">
         <div class="result-image">
@@ -479,7 +486,7 @@
 
     <section>
       <h2>B.2.2: Training the UNet</h2>
-      <p>___________________________________.</p>
+      <p>Training is fairly straightforward here: after picking a random image from the training set and a random timestep, we can add noise to our random image to get xt. Then we train the denoiser to predict the flow at xt and repeat for different images and timesteps until the model converges. Now we use a batch size of 64, a hidden dimension of 64, Adam with 1e-2 learning rate, and a scheduler using torch.optim.lr_scheduler.ExponentialLR(...).</p>
       
       <div class="image-grid">
         <div class="result-image">
