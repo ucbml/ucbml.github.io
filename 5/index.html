@@ -157,7 +157,7 @@
     
     <section>
       <h2>A.1.4: Iterative Denoising</h2>
-      <p>______________________________________</p>
+      <p>Although 1.3 is great, we can see that the quality of the results deteriorate as the images become noisier. To address this, we try denoising in an iterative manner -- using timesteps. However, we do not want to go through all steps from 1 to n as that would be super slow, so we take our steps in strides of 30. This is done by creating a function that denoises our image at some starting timestep index (timestep[i_start]), applying a mathy formula to obtain an image at the next timestep (t' = timestep[i_start + 1]), and repeating the process until we produce a clean image. Here are some figures for comparison:</p>
       
       <div class="image-grid">
         <div class="result-image">
@@ -175,7 +175,7 @@
     
     <section>
       <h2>A.1.5: Diffusion Model Sampling</h2>
-      <p>We take 5 samples of the prompt "a high quality photo".</p>
+      <p>Aside from denoising images, we can also use the denoising model to generate images from scratch. This is done by setting our starting index / timestep as 0 and in our noisy image as random noise, which in effect denoises pure noise. To visualize the results, we take 5 samples of the prompt "a high quality photo".</p>
       
       <div class="image-grid">
         <div class="result-image">
@@ -190,7 +190,7 @@
     
     <section>
       <h2>A.1.6: Classifier-Free Guidance (CFG)</h2>
-      <p>______________________________________</p>
+      <p>The results in 1.5 were not great, but we can improve this with CFGs! In CFG, we compute both a conditional and unconditional noise estimate then scale their difference and sum them up to "condense" them to a sinlge noise. Our scale controls the strength of the CFG (how closely we want our generated images to follow our text prompt). These are the results on the same "high quality photo" prompt using a scale value of 7. For all subsequent subparts, we use CFGs.</p>
       
       <div class="image-grid">
         <div class="result-image">
